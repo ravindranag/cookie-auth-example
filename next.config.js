@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
-	DOMAIN: 'cookie-auth-example.ml'
+	DOMAIN: 'cookie-auth-example'
   }
 }
 
