@@ -17,8 +17,9 @@ export default function Home() {
 	}
 
 	const handleMessage = () => {
+		console.log(process.env.DOMAIN)
 		Cookies.set('messageForRV', message, {
-			domain: `rv.${process.env.DOMAIN}`
+			domain: `.${process.env.DOMAIN}`
 		})
 	}
 
