@@ -20,7 +20,7 @@ const AuthorizedView = () => {
 			<Typography
 				variant='h2'
 			>
-				You are logged in as { user.username }
+				You are logged in as { user }
 			</Typography>
 			<Typography>
 				You are here: {siteName}
