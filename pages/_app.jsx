@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@mui/material"
+import { SessionProvider } from "../lib/context/SessionProvider"
 import theme from "../theme/theme"
 
 function MyApp({ Component, pageProps }) {
@@ -6,7 +7,9 @@ function MyApp({ Component, pageProps }) {
 		<ThemeProvider
 			theme={theme}
 		>
-			<Component {...pageProps} />
+			<SessionProvider>
+				<Component {...pageProps} />
+			</SessionProvider>
 		</ThemeProvider>
   	)
 }

@@ -17,9 +17,31 @@ const components = {
 			}
 		}
 	},
+	MuiOutlinedInput: {
+		styleOverrides: {
+			notchedOutline: {
+				'& legend': {
+					display: 'none'
+				},
+			}
+		}
+	},
+	MuiTextField: {
+		styleOverrides: {
+			root: {
+				gap: '12px'
+			}
+		}
+	},
 	MuiButton: {
 		defaultProps: {
-			disableElevation: true
+			disableElevation: true,
+			disableRipple: true
+		},
+		styleOverrides: {
+			root: {
+				padding: '10px 16px'
+			}
 		}
 	}
 }
