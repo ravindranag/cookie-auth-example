@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import api from '../axios/auth'
 
 const SessionContext = createContext()
@@ -36,11 +36,22 @@ const SessionProvider = ({ children }) => {
 		return success
 	}
 
+	async function logOut() {
+		Cookies.remove('username', {
+			domain: `.${process.env.DOMAIN}`
+		})
+		Cookies.remove('token', {
+			domain: `.${process.env.DOMAIN}`
+		})
+		setUser(null)
+	}
+
 	return (
 		<SessionContext.Provider
 			value={{
 				user,
-				logIn
+				logIn,
+				logOut
 			}}
 		>
 			{ children }

@@ -1,10 +1,10 @@
-import { Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { useState, useLayoutEffect } from "react";
 import { useSession } from "../lib/context/SessionProvider";
 
 
 const AuthorizedView = () => {
-	const { user } = useSession()
+	const { user, logOut } = useSession()
 	const [siteName, setSiteName] = useState()
 
 	useLayoutEffect(() => {
@@ -25,6 +25,14 @@ const AuthorizedView = () => {
 			<Typography>
 				You are here: {siteName}
 			</Typography>
+			<Button
+				sx={{
+					height: '48px'
+				}}
+				onClick={logOut}
+			>
+				Log out
+			</Button>
 		</Stack>
 	)
 }
